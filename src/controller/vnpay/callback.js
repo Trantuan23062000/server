@@ -3,7 +3,7 @@ import { CancelVnPay } from "../../services/order/order";
 
 const secretKey = "Q0RHU1SCQ6KX6HVFETZTCAJLEZNARAX3";
 const tmnCode = "GT92S6OD";
-const returnUrl = "http://localhost:8000/api/v1/payment/callback";
+const returnUrl = "https://api-ecommerce-pqnh.onrender.com/api/v1/payment/callback";
 
 const vnpayService = new VNPayService(secretKey, tmnCode, returnUrl);
 
