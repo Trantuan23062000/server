@@ -3,15 +3,11 @@ const { Sequelize } = require('sequelize');
 
 
 // Initialize Sequelize with database connection
-const sequelize = new Sequelize('Store_S', 'root', null, {
-  host: 'localhost',
-  dialect: 'mysql', // or 'postgres', 'sqlite', 'mssql', etc.
-  pool: {
-    max: 10,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
-  },
+const sequelize = new Sequelize('bc6wqej7j5vddox6ydye', 'ucyv9djgtvmxxp8y', 'fy90RhaB0IBtmO4pMItn', {
+  host: 'bc6wqej7j5vddox6ydye-mysql.services.clever-cloud.com',
+  dialect: 'mysql',
+  port: 3306, // Thay bằng port của bạn nếu khác 3306
+  logging: false // Đặt true để bật log chi tiết các truy vấn
 });
 
 // Test the database connection
