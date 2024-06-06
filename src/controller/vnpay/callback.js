@@ -17,10 +17,10 @@ const handleVNPAYCallback = async (req, res) => {
       const paymentStatus = queryParams.vnp_ResponseCode;
 
       if (paymentStatus === "00") {
-        res.redirect("http://localhost:3000/oder-success");
+        res.redirect("https://main--ecommerce-hone.netlify.app/oder-success");
       } else {
         await CancelVnPay(orderId, "failed");
-        res.redirect("http://localhost:3000/checkout");
+        res.redirect("https://main--ecommerce-hone.netlify.app/checkout");
       }
     } else {
       res.status(400).send("Invalid callback");
@@ -34,7 +34,7 @@ const handleVNPAYCallback = async (req, res) => {
 const cancelPaymentVNpay =async (req, res) => {
   try {
     await CancelVnPay(orderId, "failed");
-    res.redirect("http://localhost:3000/checkout");
+    res.redirect("https://main--ecommerce-hone.netlify.app/checkout");
   } catch (error) {
     console.error("Error handling VNPay cancel:", error);
     res.status(500).send("Internal server error");
